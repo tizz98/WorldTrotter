@@ -92,15 +92,39 @@
         <scene sceneID="Y0a-ms-3Eg">
             <objects>
                 <viewController id="vOQ-pQ-Mrx" customClass="MapViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
-                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="PXV-d6-TaR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    </mapView>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="I3n-sC-YEB"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SD5-5W-4gJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1915" y="635"/>
+            <point key="canvasLocation" x="1051" y="635"/>
+        </scene>
+        <!--Web-->
+        <scene sceneID="O5h-f1-6x5">
+            <objects>
+                <viewController id="r1F-JZ-dPB" customClass="WebViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tUZ-gN-RR1"/>
+                        <viewControllerLayoutGuide type="bottom" id="lti-KY-7Cg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="05f-Tp-Ora">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i8U-ck-h1n">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Web" image="BrowserIcon" id="Fqw-0S-1cr"/>
+                    <connections>
+                        <outlet property="webView" destination="i8U-ck-h1n" id="KE3-85-CC6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r5L-5A-uMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1745" y="635"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="eaz-9k-0kg">
@@ -114,6 +138,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="wor-Aw-jrG"/>
                         <segue destination="vOQ-pQ-Mrx" kind="relationship" relationship="viewControllers" id="ae7-Pr-xcZ"/>
+                        <segue destination="r1F-JZ-dPB" kind="relationship" relationship="viewControllers" id="UYf-br-1Yr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ba-mo-iQn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -122,6 +147,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="BrowserIcon" width="49" height="33"/>
         <image name="ConvertIcon" width="49" height="33"/>
         <image name="MapIcon" width="49" height="33"/>
     </resources>
