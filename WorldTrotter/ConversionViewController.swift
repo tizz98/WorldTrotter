@@ -16,7 +16,12 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         let existingTextHasDecimalSeparator = textField.text?.rangeOfString(".")
         let replacementTextHasDecimalSeparator = string.rangeOfString(".")
 
-        return !(existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil)
+        // check valid number
+        let aSet = NSCharacterSet(charactersInString:"0123456789.").invertedSet
+        let compSepByCharInSet = string.componentsSeparatedByCharactersInSet(aSet)
+        let numberFiltered = compSepByCharInSet.joinWithSeparator("")
+
+        return !(existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil) && string == numberFiltered
     }
 
     let numberFormatter: NSNumberFormatter = {
